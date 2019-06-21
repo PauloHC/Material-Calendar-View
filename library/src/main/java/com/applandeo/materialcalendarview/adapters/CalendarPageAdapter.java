@@ -9,7 +9,9 @@ import android.view.ViewGroup;
 import com.applandeo.materialcalendarview.R;
 import com.applandeo.materialcalendarview.extensions.CalendarGridView;
 import com.applandeo.materialcalendarview.listeners.DayRowClickListener;
+import com.applandeo.materialcalendarview.listeners.DayRowSelectListener;
 import com.applandeo.materialcalendarview.utils.CalendarProperties;
+import com.applandeo.materialcalendarview.utils.FocusedDay;
 import com.applandeo.materialcalendarview.utils.SelectedDay;
 
 import java.util.ArrayList;
@@ -90,6 +92,15 @@ public class CalendarPageAdapter extends PagerAdapter {
 
     public void setSelectedDay(SelectedDay selectedDay) {
         mCalendarProperties.setSelectedDay(selectedDay);
+        informDatePicker();
+    }
+
+    public FocusedDay getFocusedDay() {
+        return mCalendarProperties.getFocusedDay();
+    }
+
+    public void setFocusedDay(FocusedDay focusedDay) {
+        mCalendarProperties.setFocusedDay(focusedDay);
         informDatePicker();
     }
 
