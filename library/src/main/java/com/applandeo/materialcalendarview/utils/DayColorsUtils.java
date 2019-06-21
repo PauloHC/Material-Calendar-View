@@ -51,6 +51,22 @@ public class DayColorsUtils {
     }
 
     /**
+     * This method sets a color of the text, font type and a background of a TextView object.
+     * It is used to set day cell (numbers) style in the case of focused day. It also colors a
+     * background of the focus.
+     *
+     * @param dayLabel           TextView containing a day number
+     * @param calendarProperties A resource of a selection background color
+     */
+    public static void setFocusedDayColors(TextView dayLabel, CalendarProperties calendarProperties) {
+        setDayColors(dayLabel, calendarProperties.getFocusLabelColor(), Typeface.NORMAL,
+                R.drawable.background_color_circle_selector);
+
+        dayLabel.getBackground().setColorFilter(calendarProperties.getFocusColor(),
+                android.graphics.PorterDuff.Mode.MULTIPLY);
+    }
+
+    /**
      * This method is used to set a color of texts, font types and backgrounds of TextView objects
      * in a current visible month. Visible day labels from previous and forward months are set using
      * setDayColors() method. It also checks if a day number is a day number of today and set it
