@@ -8,6 +8,8 @@
         <attr name="todayLabelColor" format="color" />
         <attr name="selectionColor" format="color" />
         <attr name="selectionLabelColor" format="color" />
+        <attr name="focusColor" format="color" />
+        <attr name="focusLabelColor" format="color" />
         <attr name="disabledDaysLabelsColor" format="color" />
         <attr name="highlightedDaysLabelsColor" format="color" />
         <attr name="pagesColor" format="color" />

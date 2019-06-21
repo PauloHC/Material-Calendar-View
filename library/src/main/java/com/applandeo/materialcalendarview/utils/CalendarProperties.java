@@ -34,10 +34,10 @@ public class CalendarProperties {
     public static final int CALENDAR_SIZE = 2401;
     public static final int FIRST_VISIBLE_PAGE = CALENDAR_SIZE / 2;
 
-    private int mCalendarType, mHeaderColor, mHeaderLabelColor, mSelectionColor, mTodayLabelColor,
+    private int mCalendarType, mHeaderColor, mHeaderLabelColor, mSelectionColor, mFocusColor, mTodayLabelColor,
             mDialogButtonsColor, mItemLayoutResource, mDisabledDaysLabelsColor, mHighlightedDaysLabelsColor, mPagesColor,
             mAbbreviationsBarColor, mAbbreviationsLabelsColor, mDaysLabelsColor, mSelectionLabelColor,
-            mAnotherMonthsDaysLabelsColor, mHeaderVisibility, mAbbreviationsBarVisibility;
+            mFocusLabelColor, mAnotherMonthsDaysLabelsColor, mHeaderVisibility, mAbbreviationsBarVisibility;
 
     private boolean mEventsEnabled;
     private boolean mSwipeEnabled;
@@ -154,6 +154,17 @@ public class CalendarProperties {
 
     public void setSelectionColor(int selectionColor) {
         mSelectionColor = selectionColor;
+    }
+
+    public int getFocusColor() {
+        if (mFocusColor == 0) {
+            return ContextCompat.getColor(mContext, R.color.defaultFocusColor);
+        }
+        return mFocusColor;
+    }
+
+    public void setFocusColor(int focusColor) {
+        mFocusColor = focusColor;
     }
 
     public int getTodayLabelColor() {
@@ -370,6 +381,18 @@ public class CalendarProperties {
 
     public void setSelectionLabelColor(int selectionLabelColor) {
         mSelectionLabelColor = selectionLabelColor;
+    }
+
+    public int getFocusLabelColor() {
+        if (mFocusLabelColor == 0) {
+            return ContextCompat.getColor(mContext, android.R.color.white);
+        }
+
+        return mFocusLabelColor;
+    }
+
+    public void setFocusLabelColor(int focusLabelColor) {
+        mFocusLabelColor = focusLabelColor;
     }
 
     public int getAnotherMonthsDaysLabelsColor() {

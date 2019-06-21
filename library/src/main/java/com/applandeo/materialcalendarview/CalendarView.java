@@ -151,6 +151,12 @@ public class CalendarView extends LinearLayout {
         int selectionLabelColor = typedArray.getColor(R.styleable.CalendarView_selectionLabelColor, 0);
         mCalendarProperties.setSelectionLabelColor(selectionLabelColor);
 
+        int focusColor = typedArray.getColor(R.styleable.CalendarView_focusColor, 0);
+        mCalendarProperties.setFocusColor(focusColor);
+
+        int focusLabelColor = typedArray.getColor(R.styleable.CalendarView_focusLabelColor, 0);
+        mCalendarProperties.setFocusLabelColor(focusLabelColor);
+
         int disabledDaysLabelsColor = typedArray.getColor(R.styleable.CalendarView_disabledDaysLabelsColor, 0);
         mCalendarProperties.setDisabledDaysLabelsColor(disabledDaysLabelsColor);
 
