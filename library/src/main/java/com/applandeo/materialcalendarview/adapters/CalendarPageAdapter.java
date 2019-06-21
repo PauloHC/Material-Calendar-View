@@ -67,6 +67,9 @@ public class CalendarPageAdapter extends PagerAdapter {
         mCalendarGridView.setOnItemClickListener(new DayRowClickListener(this,
                 mCalendarProperties, mPageMonth));
 
+        mCalendarGridView.setOnItemSelectedListener(new DayRowSelectListener(this,
+                mCalendarProperties, mPageMonth));
+
         container.addView(mCalendarGridView);
         return mCalendarGridView;
     }
