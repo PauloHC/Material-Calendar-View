@@ -273,6 +273,9 @@ public class CalendarView extends LinearLayout {
     private void setUpCalendarPosition(Calendar calendar) {
         DateUtils.setMidnight(calendar);
 
+        mViewPager.requestFocus();
+        mCalendarProperties.setFocusedDay(mCalendarProperties.getFirstPageCalendarDate());
+
         if (mCalendarProperties.getCalendarType() == CalendarView.ONE_DAY_PICKER) {
             mCalendarProperties.setSelectedDay(calendar);
         }
