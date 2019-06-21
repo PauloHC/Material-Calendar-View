@@ -57,6 +57,7 @@ public class CalendarProperties {
     private List<Calendar> mDisabledDays = new ArrayList<>();
     private List<Calendar> mHighlightedDays = new ArrayList<>();
     private List<SelectedDay> mSelectedDays = new ArrayList<>();
+    private FocusedDay mFocusedDay;
 
     private Context mContext;
 
@@ -309,6 +310,18 @@ public class CalendarProperties {
                     return new SelectedDay(calendar);
                 }).filterNot(value -> mDisabledDays.contains(value.getCalendar()))
                 .toList();
+    }
+
+    public FocusedDay getFocusedDay() {
+        return mFocusedDay;
+    }
+
+    public void setFocusedDay(Calendar calendar) {
+        setFocusedDay(new FocusedDay(calendar));
+    }
+
+    public void setFocusedDay(FocusedDay focusedDay) {
+        mFocusedDay = focusedDay;
     }
 
     public int getDisabledDaysLabelsColor() {
